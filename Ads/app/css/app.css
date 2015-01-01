@@ -1,10 +1,8 @@
-.pesho {
-	color:red;
-}
-
-.pesho:hover {
-	color:blue 
-}
-.even_row {
-	background: red;
+.sidebar {
+	width: 12%;
+	padding: 5px;
+	text-align: center;
+	background-color: green;
+	border: 2px solid darkgreen;
+	border-radius: 2px;
 }
