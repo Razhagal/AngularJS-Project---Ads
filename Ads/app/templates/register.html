@@ -1,0 +1,21 @@
+<aside class="left">
+	<div ng-include="'templates/nav.html'" class="sidebar"></div>
+	<!-- if not logged show login/register options -->
+	<div ng-include="'templates/loginSideBar.html'" class="sidebar"></div>
+</aside>
+<section class="form">
+	<div class="register">
+		<form action="">
+			<legend>User Registration</legend>
+			<label for="userName">Username:</label>
+			<br />
+			<input type="text" id="userName" required />
+			<br />
+			<label for="password">Password:</label>
+			<br />
+			<input type="password" id="password" required />
+		</form>
+		<button>Login</button>
+		<a href="#/register">Register here</a>
+	</div>
+</section>

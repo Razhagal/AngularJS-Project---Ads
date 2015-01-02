@@ -1,15 +1,13 @@
 var app = angular.module('adsModule', ['ngRoute'])
 	.config(function($routeProvider) {
 		$routeProvider.when('/home', {
-			templateUrl: 'templates/loginSideBar.html'
+			templateUrl: 'templates/main.html'
 		})
 		.when('/login', {
-			//login page
-			//templateUrl:...,
-			//controller:...
+			templateUrl: 'templates/login.html'
 		})
 		.when('/register', {
-			//register page
+			templateUrl: 'templates/register.html'
 		})
 		.otherwise({
 			redirectTo: '/home'
