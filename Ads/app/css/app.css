@@ -70,3 +70,7 @@ aside > div:last-child {
 .register {
 	width: 80%;
 }
+
+form > div {
+	display: inline-block;
+}

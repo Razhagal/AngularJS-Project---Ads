@@ -12,4 +12,4 @@ var app = angular.module('adsModule', ['ngRoute'])
 		.otherwise({
 			redirectTo: '/home'
 		})
-	})
+	});

@@ -7,15 +7,45 @@
 	<div class="register">
 		<form action="">
 			<legend>User Registration</legend>
-			<label for="userName">Username:</label>
-			<br />
-			<input type="text" id="userName" required />
-			<br />
-			<label for="password">Password:</label>
-			<br />
-			<input type="password" id="password" required />
+			<div>
+				<label for="userName">Username:</label>
+				<br />
+				<input type="text" id="userName" required />
+				<br />
+
+				<label for="password">Password:</label>
+				<br />
+				<input type="password" id="password" required />
+				<br />
+
+				<label for="name">Name:</label>
+				<br />
+				<input type="text" id="name">
+				<br />
+
+				<label for="phone">Phone:</label>
+				<br />
+				<input type="tel" id="phone">
+			</div>
+			<div>
+				<label for="repeatedPass">Confirm password:</label>
+				<br />
+				<input type="password" id="repeatedPass" required />
+				<br />
+
+				<label for="mail">Email:</label>
+				<br />
+				<input type="text" id="mail">
+				<br />
+
+				<label for="town">Town:</label>
+				<br />
+				<select name="registration-town" id="town">
+					<option value="null">Choose town</option>
+				</select>
+			</div>
 		</form>
-		<button>Login</button>
-		<a href="#/register">Register here</a>
+		<button>Register</button>
+		<a href="#/login">Login here</a>
 	</div>
 </section>
