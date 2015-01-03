@@ -3,22 +3,26 @@
 <head>
 	<meta charset="utf-8">
 	<title>Advertisements</title>
-	<link rel="stylesheet" href="css/app.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/app.css">
 </head>
 <body ng-app="adsModule" ng-controller="MainController">
-	<header>
-		Ads - {{pageName}}
-	</header>
-	<div ng-view class="main">
-		
+	<div class="panel panel-default header">
+		<div class="panel-heading">
+			Ads - {{pageName}}
+		</div>		
 	</div>
-	<footer>
-		<p>
+	<div class="container-fluid">
+		<div ng-view class="row">
+		
+		</div>
+	</div>
+	<div class="panel panel-default footer">
+		<div class="panel-footer">
 			&copy 2014 by Software University Foundation, No Rights Reserved
-		</p>
-	</footer>
+		</div>
+	</div>
 
 	<script type="text/javascript" src="lib/angular/angular.js"></script>
 	<script type="text/javascript" src="lib/angular/angular-route.js"></script>

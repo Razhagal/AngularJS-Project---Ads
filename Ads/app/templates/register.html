@@ -1,51 +1,70 @@
-<aside class="left">
-	<div ng-include="'templates/nav.html'" class="sidebar"></div>
+<aside class="aside left-aside col-md-3">
+	<div ng-include="'templates/nav.html'"></div>
 	<!-- if not logged show login/register options -->
-	<div ng-include="'templates/loginSideBar.html'" class="sidebar"></div>
+	<div ng-include="'templates/loginSideBar.html'"></div>
 </aside>
-<section class="form">
-	<div class="register">
-		<form action="">
-			<legend>User Registration</legend>
-			<div>
-				<label for="userName">Username:</label>
-				<br />
-				<input type="text" id="userName" required />
-				<br />
-
-				<label for="password">Password:</label>
-				<br />
-				<input type="password" id="password" required />
-				<br />
-
-				<label for="name">Name:</label>
-				<br />
-				<input type="text" id="name">
-				<br />
-
-				<label for="phone">Phone:</label>
-				<br />
-				<input type="tel" id="phone">
+<section class="col-md-7 col-md-offset-1">
+	<form class="form-horizontal">
+		<fieldset>
+			<legend>Register</legend>
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label for="inputUsername" class="col-lg-2 control-label">Username:</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="inputUsername" placeholder="Username">
+					</div>
+				</div>
 			</div>
-			<div>
-				<label for="repeatedPass">Confirm password:</label>
-				<br />
-				<input type="password" id="repeatedPass" required />
-				<br />
-
-				<label for="mail">Email:</label>
-				<br />
-				<input type="text" id="mail">
-				<br />
-
-				<label for="town">Town:</label>
-				<br />
-				<select name="registration-town" id="town">
-					<option value="null">Choose town</option>
-				</select>
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label for="inputPassword" class="col-lg-2 control-label">Password:</label>
+					<div class="col-lg-10">
+						<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+					</div>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="inputConfirmPassword" class="col-lg-2 control-label">Confirm password:</label>
+					<div class="col-lg-10">
+						<input type="password" class="form-control" id="inputConfirmPassword" placeholder="Repeat password">
+					</div>
+				</div>
 			</div>
-		</form>
-		<button>Register</button>
-		<a href="#/login">Login here</a>
-	</div>
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label for="inputName" class="col-lg-2 control-label">Name:</label>
+					<div class="col-lg-10">
+						<input type="password" class="form-control" id="inputName" placeholder="Name">
+					</div>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="inputEmail" class="col-lg-2 control-label">Email:</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id="inputEmail" placeholder="Email">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label for="inputPhone" class="col-lg-2 control-label">Phone:</label>
+					<div class="col-lg-10">
+						<input type="tel" class="form-control" id="inputPhone" placeholder="Phone">
+					</div>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="select" class="col-lg-2 control-label">Towns</label>
+					<div class="col-lg-10">
+						<select class="form-control" id="select">
+							<option value="null">Choose town</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-10 col-lg-offset-2">
+					<button type="submit" class="btn btn-primary col-md-offset-2">Register</button>
+					<a href="#/login" class="col-md-offset-4">Login here</a>
+				</div>
+			</div>
+		</fieldset>
+	</form>
 </section>

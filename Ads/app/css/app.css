@@ -1,76 +1,10 @@
-body, aside, section, header, footer, article, ul, li, div, p, h1, h2, h3 {
+/*  body, aside, section, header, footer, article, ul, li, div, p, h1, h2, h3 {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	box-sizing: border-box;
-}
+} */
 
-body > header, footer {
-	text-align: center;
-	background: #A9D18E;
-	border: 1px solid darkgreen;
-}
-
-.main {
-	width: 100%;
-	margin: 20px 0;
-	overflow: hidden;
-}
-
-aside, section {
-	display: inline-block;
-	vertical-align: top;
-}
-
-aside {
-	width: 15%;
-	margin: 0 20px;
-}
-
-aside > div {
-	margin-bottom: 20px;
-}
-
-aside > div:last-child {
-	margin: 0;
-}
-
-.sidebar {
-	padding: 5px;
-	text-align: center;
-	background-color: #A9D18E;
-	border: 2px solid darkgreen;
-	border-radius: 2px;
-}
-
-.left {
-	float: left;
-}
-
-.right {
-	float: right;
-}
-
-.form {
-	width: 75%;
-}
-
-.form > div {
-	margin: 0 auto;
-	padding: 10px;
-	background-color: #A9D18E;
-	border: 1px solid darkgreen;
-	border-radius: 10px;
-}
-
-.login {
-	width: 50%;
-}
-
-.register {
-	width: 80%;
-}
-
-form > div {
-	display: inline-block;
+ul {
+	list-style-type: none;
 }
