@@ -10,7 +10,7 @@
 <body ng-app="adsModule" ng-controller="MainController">
 	<header class="panel panel-default">
 		<div class="panel-heading">
-			Ads - {{pageName}}
+			Ads - {{Page.getName()}}
 		</div>		
 	</header>
 	<div class="container-fluid">
@@ -28,8 +28,12 @@
 	<script type="text/javascript" src="lib/angular/angular-route.js"></script>
 	<script type="text/javascript" src="lib/angular/angular-resource.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/services/publicAdsService.js"></script>
-	<script type="text/javascript" src="js/services/userAdsService.js"></script>
-	<script type="text/javascript" src="js/controllers/MainController.js"></script>
+	<script type="text/javascript" src="js/services/page.js"></script>	
+	<script type="text/javascript" src="js/services/adv-service.js"></script>
+	<script type="text/javascript" src="js/services/categories-service.js"></script>
+	<script type="text/javascript" src="js/services/towns-service.js"></script>
+	<script type="text/javascript" src="js/controllers/main-controller.js"></script>
+	<script type="text/javascript" src="js/controllers/login-controller.js"></script>
+	<script type="text/javascript" src="js/controllers/register-controller.js"></script>
 </body>
 </html>

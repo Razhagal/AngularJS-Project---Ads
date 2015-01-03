@@ -9,7 +9,17 @@ body > header, body > footer, aside {
 	text-align: center;
 }
 
-.advItem {
+aside ul li {
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+.btn {
+	width: 120px;
+	margin-bottom: 10px;
+}
+
+.advItem, .form-horizontal {
 	margin-bottom: 25px;
 	padding: 15px;
 	background-color: #303030;

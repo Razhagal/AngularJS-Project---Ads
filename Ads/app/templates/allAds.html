@@ -7,11 +7,11 @@
 					{{ad.title}}
 				</h3>
 				<span class="col-md-3 col-md-offset-2">
-					{{ad.date | date: dd-MMM-yyyy}}
+					{{ad.date | date: 'd-MMM-yyyy'}}
 				</span>
 			</header>
 			<div class="row">
-				<img src="" ng-src="{{ad.imageDataUrl}}" class="col-md-4">
+				<img src="" ng-src="{{ad.imageDataUrl || 'images/no-img.jpg'}}" class="col-md-4">
 				<div class="col-md-8">
 					<p class="advContent">
 						{{ad.text}}
