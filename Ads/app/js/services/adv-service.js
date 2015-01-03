@@ -16,27 +16,27 @@ app.factory('adsService', function($resource, baseUrl) {
 		});
 
 	function getAllAds(adsRequestParams) {
-		return publicAdsResource.get(adsRequestParams);
+		return publicAdsResource.get(adsRequestParams).$promise;
 	}
 
 	function getUserAds(adsRequestParams) {
-		return userAdsResource.get(adsRequestParams);
+		return userAdsResource.get(adsRequestParams).$promise;
 	}
 
 	function createNewAd(ad) {
-		return userAdsResource.save(ad);
+		return userAdsResource.save(ad).$promise;
 	}
 
 	function getAdById(id) {
-		return userAdsResource.get({id:id});
+		return userAdsResource.get({id:id}).$promise;
 	}
 
 	function editAd(id, ad) {
-		return userAdsResource.update({id:id}, ad);
+		return userAdsResource.update({id:id}, ad).$promise;
 	}
 
 	function deleteAd(id) {
-		return userAdsResource.delete({id:id});
+		return userAdsResource.delete({id:id}).$promise;
 	}
 
 	return {

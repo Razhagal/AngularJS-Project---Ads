@@ -1,5 +1,5 @@
 app.controller('MainController', function($scope, pageSize, Page,
-	adsService,categoriesService, townsService) {
+	adsService, categoriesService, townsService) {
 	if ($scope.Page) {
 		Page.setPageName('Home');
 	} else {
@@ -12,7 +12,35 @@ app.controller('MainController', function($scope, pageSize, Page,
 		pageSize: pageSize
 	}
 
-	$scope.data = adsService.getAll($scope.adsRequestParams);
+	$scope.getAds = function(requestParams) {
+		adsService.getAll(requestParams)
+			.then(function(data) {
+				$scope.adsData = data;
+				$scope.numOfPages = data.numPages;
+			});
+	}
+
+	$scope.getAds($scope.adsRequestParams);
 	$scope.categories = categoriesService.getCategories();
 	$scope.towns = townsService.getTowns();
+
+	$scope.filterByCategory = function(categoryId) {
+		if (categoryId) {
+			$scope.adsRequestParams.categoryId = categoryId;
+		} else {
+			delete $scope.adsRequestParams['categoryId'];
+		}
+
+		$scope.getAds($scope.adsRequestParams);
+	}
+
+	$scope.filterByTown = function(townId) {
+		if (townId) {
+			$scope.adsRequestParams.townId = townId;
+		} else {
+			delete $scope.adsRequestParams['townId'];
+		}
+
+		$scope.getAds($scope.adsRequestParams);
+	}
 });

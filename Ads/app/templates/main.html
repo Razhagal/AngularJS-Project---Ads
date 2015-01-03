@@ -12,10 +12,10 @@
 		<div class="panel-body">
 			<ul>
 				<li>
-					<a href="#">All</a>
+					<a href ng-click="filterByCategory(null)">All</a>
 				</li>
 				<li ng-repeat="category in categories">
-					<a href="#">{{category.name}}</a>
+					<a href ng-click="filterByCategory(category.id)">{{category.name}}</a>
 				</li>
 			</ul>
 		</div>
@@ -27,10 +27,10 @@
 		<div class="panel-body">
 			<ul>
 				<li>
-					<a href="#">All</a>
+					<a href ng-click="filterByTown(null)">All</a>
 				</li>
 				<li ng-repeat="town in towns">
-					<a href="#">{{town.name}}</a>
+					<a href ng-click="filterByTown(town.id)">{{town.name}}</a>
 				</li>
 			</ul>
 		</div>
