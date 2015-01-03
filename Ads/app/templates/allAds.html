@@ -1,26 +1,35 @@
 <ul>
-<li>asd</li>
-	<li ng-repeat="ad in data.ads">
+	<li ng-repeat="ad in data.ads" class="advItem">
 		<article>
 			<!--<a href="#/ads/{{ad.id}}">-->
-			<header>
-				<h1>
+			<header class="row">
+				<h3 class="col-md-7">
 					{{ad.title}}
-				</h1>
-				<span>
-					{{ad.date}}
+				</h3>
+				<span class="col-md-3 col-md-offset-2">
+					{{ad.date | date: dd-MMM-yyyy}}
 				</span>
 			</header>
-			<img src="" alt="">
-			<div class="adContent">
-				<p>
-					{{ad.text}}
-				</p>
-				<strong>Name:</strong> <span>authorName</span>
-				<strong>Email:</strong> <span>authorMail</span>
-				<strong>Tel.</strong> <span>authorPhone</span>
+			<div class="row">
+				<img src="" ng-src="{{ad.imageDataUrl}}" class="col-md-4">
+				<div class="col-md-8">
+					<p class="advContent">
+						{{ad.text}}
+					</p>
+					<div class="row advContent">
+						<span class="col-md-2">Name:</span>
+						<span class="col-md-9">{{ad.ownerName}}</span>
+					</div>
+					<div class="row advContent">
+						<span class="col-md-2">Email:</span>
+						<span class="col-md-9">{{ad.ownerEmail}}</span>
+					</div>
+					<div class="row advContent">
+						<span class="col-md-2">Tel.</span>
+						<span class="col-md-9">{{ad.ownerPhone}}</span>
+					</div>
+				</div>
 			</div>
-		</a>
 		</article>		
 	</li>
 </ul>
