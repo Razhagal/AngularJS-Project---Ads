@@ -15,5 +15,4 @@ app.controller('MainController', function($scope, pageSize, Page,
 	$scope.data = adsService.getAll($scope.adsRequestParams);
 	$scope.categories = categoriesService.getCategories();
 	$scope.towns = townsService.getTowns();
-
 });
