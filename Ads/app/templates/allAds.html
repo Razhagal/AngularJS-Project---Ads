@@ -1,7 +1,6 @@
 <ul>
 	<li ng-repeat="ad in adsData.ads" class="advItem">
 		<article>
-			<!--<a href="#/ads/{{ad.id}}">-->
 			<header class="row">
 				<h3 class="col-md-7">
 					{{ad.title}}
@@ -30,17 +29,13 @@
 					</div>
 				</div>
 			</div>
-		</article>		
+		</article>
 	</li>
 </ul>
-<div>
-	<ul class="pagination">
-		<li><a href="#">«</a></li>
-		<li><a href="#">1</a></li>
-		<li><a href="#">2</a></li>
-		<li><a href="#">3</a></li>
-		<li><a href="#">4</a></li>
-		<li><a href="#">5</a></li>
-		<li><a href="#">»</a></li>
-	</ul>
+<div pagination total-items="adsData.numItems" ng-model="adsRequestParams.startPage" max-size="maxSize" boundary-links="true" ng-change="showPage()" num-pages="numPages" items-per-page="adsRequestParams.pageSize" rotate="false">
 </div>
+
+<!--<pagination total-items="adsData.numItems" ng-model="adsRequestParams.startPage"
+  items-per-page="adsRequestParams.pageSize" ng-change="getAds(adsRequestParams)"
+  max-size="9" boundary-links="true">
+</pagination>-->

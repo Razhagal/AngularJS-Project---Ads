@@ -1,4 +1,4 @@
-var app = angular.module('adsModule', ['ngRoute', 'ngResource'])
+var app = angular.module('adsModule', ['ngRoute', 'ngResource', 'ui.bootstrap.pagination'])
 	.config(function($routeProvider) {
 		$routeProvider.when('/home', {
 			templateUrl: 'templates/main.html',
@@ -17,4 +17,4 @@ var app = angular.module('adsModule', ['ngRoute', 'ngResource'])
 		})
 	})
 	.constant('baseUrl', 'http://softuni-ads.azurewebsites.net/api')
-	.constant('pageSize', 5);
+	.constant('pageSize', 3);

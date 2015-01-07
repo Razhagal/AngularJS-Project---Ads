@@ -16,14 +16,14 @@ app.controller('MainController', function($scope, pageSize, Page,
 		adsService.getAll(requestParams)
 			.then(function(data) {
 				$scope.adsData = data;
-				$scope.numOfPages = data.numPages;
+				$scope.pageNumbers = new Array(data.numPages);
 			});
 	}
 
 	$scope.getAds($scope.adsRequestParams);
 	$scope.categories = categoriesService.getCategories();
 	$scope.towns = townsService.getTowns();
-
+	$scope.maxSize = 5;
 	$scope.filterByCategory = function(categoryId) {
 		if (categoryId) {
 			$scope.adsRequestParams.categoryId = categoryId;
@@ -41,6 +41,10 @@ app.controller('MainController', function($scope, pageSize, Page,
 			delete $scope.adsRequestParams['townId'];
 		}
 
+		$scope.getAds($scope.adsRequestParams);
+	}
+
+	$scope.showPage = function() {
 		$scope.getAds($scope.adsRequestParams);
 	}
 });
