@@ -4,18 +4,18 @@
 	<div ng-include="'templates/loginSideBar.html'"></div>
 </aside>
 <section ng-include="'templates/allAds.html'" class="col-md-7"></section>
-<aside class="aside right-aside col-md-2">
+<aside class="aside right-aside col-md-3">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h3 class="panel-title">Categories</h3>
 		</div>
 		<div class="panel-body">
-			<ul>
+			<ul class="list-group">
 				<li>
-					<a href ng-click="filterByCategory(null)">All</a>
+					<a href ng-click="filterByCategory(null)" class="list-group-item" ng-class="{'active' : adsRequestParams.categoryId == null}">All</a>
 				</li>
 				<li ng-repeat="category in categories">
-					<a href ng-click="filterByCategory(category.id)">{{category.name}}</a>
+					<a href ng-click="filterByCategory(category.id)" class="list-group-item" ng-class="{'active' : adsRequestParams.categoryId == category.id}">{{category.name}}</a>
 				</li>
 			</ul>
 		</div>
@@ -27,10 +27,10 @@
 		<div class="panel-body">
 			<ul>
 				<li>
-					<a href ng-click="filterByTown(null)">All</a>
+					<a href ng-click="filterByTown(null)" class="list-group-item" ng-class="{'active' : adsRequestParams.townId == null}">All</a>
 				</li>
 				<li ng-repeat="town in towns">
-					<a href ng-click="filterByTown(town.id)">{{town.name}}</a>
+					<a href ng-click="filterByTown(town.id)" class="list-group-item" ng-class="{'active' : adsRequestParams.townId == town.id}">{{town.name}}</a>
 				</li>
 			</ul>
 		</div>

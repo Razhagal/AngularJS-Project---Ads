@@ -23,14 +23,9 @@ app.controller('MainController', function($scope, pageSize, Page,
 	$scope.getAds($scope.adsRequestParams);
 	$scope.categories = categoriesService.getCategories();
 	$scope.towns = townsService.getTowns();
-	$scope.maxSize = 5;
+	
 	$scope.filterByCategory = function(categoryId) {
-		if (categoryId) {
-			$scope.adsRequestParams.categoryId = categoryId;
-		} else {
-			delete $scope.adsRequestParams['categoryId'];
-		}
-
+		$scope.adsRequestParams.categoryId = categoryId
 		$scope.getAds($scope.adsRequestParams);
 	}
 
@@ -46,5 +41,9 @@ app.controller('MainController', function($scope, pageSize, Page,
 
 	$scope.showPage = function() {
 		$scope.getAds($scope.adsRequestParams);
+	}
+
+	$scope.cliknat = {
+		'background-color': 'red'
 	}
 });
