@@ -9,6 +9,10 @@ body > header, body > footer, aside {
 	text-align: center;
 }
 
+body > header .user-control {
+	float: right;
+}
+
 aside ul li {
 	margin-bottom: 5px;
 	text-align: left;
