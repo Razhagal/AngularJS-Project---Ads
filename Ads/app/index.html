@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="adsModule" ng-controller="AppController">
 <head>
 	<meta charset="utf-8">
 	<title>Advertisements</title>
@@ -7,10 +7,10 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/app.css">
 </head>
-<body ng-app="adsModule" ng-controller="PageController">
+<body>
 	<header class="panel panel-default">
 		<div class="panel-heading">
-			Ads - {{Page.getName()}}
+			Ads - {{pageService.getName()}}
 		</div>		
 	</header>
 	<div class="container-fluid">
@@ -31,12 +31,12 @@
 	<script src="lib/bootstrap/bootstrap-3.1.1.js"></script>
 	<script src="lib/bootstrap/ui.bootstrap.pagination-0.12.0.js"></script>
 	<script src="js/app.js"></script>
-	<script src="js/services/page.js"></script>	
+	<script src="js/services/page-service.js"></script>	
 	<script src="js/services/adv-service.js"></script>
 	<script src="js/services/categories-service.js"></script>
 	<script src="js/services/towns-service.js"></script>
 	<script src="js/services/auth-service.js"></script>
-	<script src="js/controllers/page-controller.js"></script>
+	<script src="js/controllers/app-controller.js"></script>
 	<script src="js/controllers/ads-controller.js"></script>
 	<script src="js/controllers/login-controller.js"></script>
 	<script src="js/controllers/register-controller.js"></script>

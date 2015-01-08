@@ -1,16 +1,16 @@
-app.controller('RegisterController', function($scope, Page, townsService, authenticationService) {
-	Page.setPageName('Register');
+app.controller('RegisterController', function($scope, pageService,
+		townsService, authenticationService, notificationService) {
+	pageService.setPageName('Register');
 	$scope.towns = townsService.getTowns();
 	$scope.userData = {};
 
 	$scope.register = function(userData) {
 		authenticationService.register(userData)
 			.then(function(successData) {
+				sessionStorage['currentUser'] = JSON.stringify(data);
 				console.log(successData);
 			}, function(error) {
 				console.log(error);
 			});
 	}
-
-	//{"message":"The request is invalid.","modelState":{"model.Password":["The Password field is required."],"model.ConfirmPassword":["The Confirm password field is required."]}}
 });

@@ -1,3 +1,3 @@
-app.controller('LoginController', function($scope, Page) {
-	Page.setPageName('Login');
+app.controller('LoginController', function($scope, pageService, notificationService) {
+	pageService.setPageName('Login');
 });

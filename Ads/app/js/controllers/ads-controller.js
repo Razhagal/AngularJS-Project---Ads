@@ -1,11 +1,6 @@
-app.controller('MainController', function($scope, pageSize, Page,
-	adsService, categoriesService, townsService) {
-	if ($scope.Page) {
-		Page.setPageName('Home');
-	} else {
-		$scope.Page = Page;
-		Page.setPageName('Home');
-	}
+app.controller('MainController', function($scope, pageSize, pageService,
+		adsService, categoriesService, townsService, notificationService) {
+	pageService.setPageName('Home');
 
 	$scope.adsRequestParams = {
 		startPage: 1,

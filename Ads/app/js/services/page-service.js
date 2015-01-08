@@ -1,4 +1,4 @@
-app.factory('Page', function() {
+app.factory('pageService', function() {
 	var currentPageName = '';
 
 	function getPageName() {
