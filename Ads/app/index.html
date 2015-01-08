@@ -13,7 +13,7 @@
 			Ads - {{pageService.getName()}}
 			<div ng-if="authService.isLogged()" class="user-control">
 				<span>{{authService.getUser().username}}</span>
-				<a href="#">Logout</a>
+				<a href ng-click="logout()">Logout</a>
 			</div>
 		</div>		
 	</header>

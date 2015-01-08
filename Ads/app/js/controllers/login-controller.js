@@ -6,10 +6,9 @@ app.controller('LoginController', function($scope, $location,
 	$scope.login = function(userData) {
 		authenticationService.login(userData)
 			.then(function(successData) {
-				console.log(successData);
 				sessionStorage['currentUser'] = JSON.stringify(successData);
 				notificationService.showSuccess("Logged in successfully!")
-				$location.path('/home');
+				$location.path('/user/home');
 			}, function(error) {
 				notificationService.showError("Failed to login", error.data);
 			});

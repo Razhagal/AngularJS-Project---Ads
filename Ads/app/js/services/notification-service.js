@@ -1,5 +1,14 @@
 app.factory('notificationService', function() {
-	function showSuccess(msg) {
+	function showInfo(msg) {
+        noty({
+            text: msg,
+            type: 'info',
+            layout: 'topCenter',
+            timeout: 3000
+        });
+    }
+
+    function showSuccess(msg) {
 		noty({
 			text: msg,
 			type: 'success',
@@ -39,6 +48,7 @@ app.factory('notificationService', function() {
 	}
 
 	return {
+        showInfo: showInfo,
 		showSuccess: showSuccess,
 		showError: showError
 	}

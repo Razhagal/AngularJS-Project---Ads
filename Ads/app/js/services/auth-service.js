@@ -19,6 +19,10 @@ app.factory('authenticationService', function($resource, baseUrl){
 		return userLoginService.save(userData).$promise;
 	}
 
+	function logOutUser() {
+		delete sessionStorage['currentUser'];
+	}
+
 	function isLogged() {
 		return sessionStorage['currentUser'] != undefined;
 	}
@@ -33,6 +37,7 @@ app.factory('authenticationService', function($resource, baseUrl){
 	return {
 		register: registerUser,
 		login: loginUser,
+		logout: logOutUser,
 		isLogged: isLogged,
 		getUser: getUser
 	}
