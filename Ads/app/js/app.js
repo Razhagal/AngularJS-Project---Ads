@@ -28,6 +28,12 @@ var app = angular.module('adsModule', ['ngRoute', 'ngResource', 'ui.bootstrap.pa
 			controller: 'MainController',
 			resolve: routePermissions
 		})
+		.when('/user/ads', {
+			templateUrl: 'templates/userAds.html',
+			controller: 'UserController',
+			resolve: routePermissions
+
+		})
 		.when('/user/ads/publish', {
 			templateUrl: 'templates/publishAd.html',
 			controller: 'PublishAdController',

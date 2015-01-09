@@ -3,6 +3,7 @@ app.controller('AppController', function($scope, $location, pageService,
 	pageService.setPageName('Home');
 	$scope.pageService = pageService;
 	$scope.authService = authenticationService;
+	$scope.location = $location;
 
 	$scope.logout = function() {
 		authenticationService.logout();
