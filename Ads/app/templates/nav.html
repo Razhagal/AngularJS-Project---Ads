@@ -4,13 +4,13 @@
 	</div>
 	<div class="panel-body">
 		<a href="#">Home</a>
-		<div ng-if="authService.isLogged()">
+		<div ng-if="authService.isUser()">
 		<ul>
 			<li>
 				<a href="#">My Ads</a>
 			</li>
 			<li>
-				<a href="#">Publish New Ad</a>
+				<a href="#/user/ads/publish">Publish New Ad</a>
 			</li>
 			<li>
 				<a href="#">Edit Profile</a>

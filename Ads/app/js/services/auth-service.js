@@ -34,11 +34,27 @@ app.factory('authenticationService', function($resource, baseUrl){
 		}
 	}
 
+	function isNormalUser() {
+		return this.isLogged() && !this.getUser().isAdmin;
+	}
+
+	function getHeaders() {
+		var headers = {},
+			currentUser = this.getUser();
+		if (currentUser) {
+			headers['Authorization'] = 'Bearer ' + currentUser.access_token;
+		}
+
+		return headers;
+	}
+
 	return {
 		register: registerUser,
 		login: loginUser,
 		logout: logOutUser,
 		isLogged: isLogged,
-		getUser: getUser
+		getUser: getUser,
+		isUser: isNormalUser,
+		getHeaders: getHeaders
 	}
 });

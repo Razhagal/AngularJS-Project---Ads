@@ -5,7 +5,7 @@ body, aside, section, header, footer, article, ul, li, div, p, h1, h2, h3 {
 	box-sizing: border-box;
 }
 
-body > header, body > footer, aside {
+body > header, body > footer {
 	text-align: center;
 }
 
