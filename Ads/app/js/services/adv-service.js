@@ -1,15 +1,19 @@
-app.factory('adsService', function($resource, baseUrl) {
-	var publicAdsResource = $resource(
+app.factory('adsService', function($resource, $http, baseUrl, authenticationService) {
+	$http.defaults.headers.common['Authorization'] = authenticationService.getHeaders().Authorization;
+	var userAdsUrl = baseUrl + '/user/ads/:id',
+		headers = authenticationService.getHeaders(),
+		 publicAdsResource = $resource(
 			baseUrl + '/ads',
 			null,
 			{update: {
 				method: 'PUT'
 			}
 		}),
-		userAdsUrl = baseUrl + '/user/ads/:id',
 		userAdsResource = $resource(
 			userAdsUrl,
-			{id:'@id'},
+			{
+				id:'@id'
+			},
 			{update: {
 				method: 'PUT'
 			}

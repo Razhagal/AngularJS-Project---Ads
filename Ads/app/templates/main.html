@@ -1,6 +1,5 @@
 <aside class="aside left-aside col-md-2">
 	<div ng-include="'templates/nav.html'"></div>
-	<!-- if not logged show login/register options -->
 	<div ng-if="!authService.isLogged()" ng-include="'templates/loginSideBar.html'"></div>
 </aside>
 <section ng-include="'templates/allAds.html'" class="col-md-7"></section>

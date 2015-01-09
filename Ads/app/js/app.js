@@ -29,7 +29,9 @@ var app = angular.module('adsModule', ['ngRoute', 'ngResource', 'ui.bootstrap.pa
 			resolve: routePermissions
 		})
 		.when('/user/ads/publish', {
-			
+			templateUrl: 'templates/publishAd.html',
+			controller: 'PublishAdController',
+			resolve: routePermissions
 		})
 		.otherwise({
 			redirectTo: '/home'
