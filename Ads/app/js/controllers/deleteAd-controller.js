@@ -11,10 +11,10 @@ app.controller('DeleteAdController', function($scope, $routeParams, pageService,
 			});
 	}
 
-	$scope.edit = function(adData) {
-		adsService.edit($routeParams.id, adData)
+	$scope.delete = function() {
+		adsService.delete($routeParams.id)
 			.then(function(successData) {
-				notificationService.showSuccess('Advertisement edited. Don\' forget to submit it for publishing.');
+				notificationService.showSuccess('Advertisement deleted.');
 			}, function(error) {
 				notificationService.showError(error.data);
 			});

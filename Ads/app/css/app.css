@@ -34,11 +34,15 @@ aside ul li {
 	border-radius: 5px;
 }
 
+legend {
+	text-align: center;
+}
+
 .advItem header {
 	margin-bottom: 20px;
 }
 
-.advItem img, .ad-image {
+.ad-image {
 	max-width: 150px;
 	max-height: 150px;
 }
@@ -62,6 +66,6 @@ aside ul li {
 	margin-left: 14px;
 }
 
-.adButtons {
+.adData {
 	border-right: 2px solid black;
 }

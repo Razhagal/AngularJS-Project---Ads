@@ -9,7 +9,7 @@
 <ul>
 	<li ng-repeat="ad in userAdsData.ads" class="advItem">
 		<article class="row">
-			<div class="col-md-9 adButtons">
+			<div class="col-md-9 adData">
 				<header class="row">
 					<h3 class="col-md-7">
 						{{ad.title}}
@@ -19,7 +19,7 @@
 					</span>
 				</header>
 				<div class="row">
-					<img src="" ng-src="{{ad.imageDataUrl || 'images/no-img.jpg'}}" class="col-md-4">
+					<img src="" ng-src="{{ad.imageDataUrl || 'images/no-img.jpg'}}" class="ad-image col-md-4">
 					<div class="col-md-8">
 						<p class="advContent advContentBox">
 							{{ad.text}}
