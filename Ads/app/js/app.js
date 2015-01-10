@@ -45,7 +45,8 @@ var app = angular.module('adsModule', ['ngRoute', 'ngResource', 'ui.bootstrap.pa
 			resolve: routePermissions
 		})
 		.when('/user/ads/delete/:id', {
-			
+			templateUrl: 'templates/deleteAd.html',
+			controller: 'DeleteAdController',
 			resolve: routePermissions
 		})
 		.otherwise({
