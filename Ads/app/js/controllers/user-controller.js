@@ -26,7 +26,16 @@ app.controller('UserController', function($scope, $location, pageSize, pageServi
 	$scope.deactivateAd = function(adId) {
 		adsService.deactivate(adId)
 			.then(function(successData) {
-				notificationService.showError(successData);
+				notificationService.showError('Ad deactivated successfully.');
+			}, function(error) {
+				notificationService.showError(error.data);
+			})
+	}
+
+	$scope.republishAd = function(adId) {
+		adsService.republish(adId)
+			.then(function(successData) {
+				notificationService.showSuccess('Ad re-submitted for approval. Once approved, it will be published.');
 			}, function(error) {
 				notificationService.showError(error.data);
 			})

@@ -32,6 +32,10 @@ app.factory('adsService', function($resource, $http, baseUrl, authenticationServ
 		return userAdsResource.deactivate({id: id}).$promise;
 	}
 
+	function republishAd(id) {
+		return userAdsResource.republish({id: id}).$promise;
+	}
+
 	function getAdById(id) {
 		return userAdsResource.get({id:id}).$promise;
 	}
@@ -49,6 +53,7 @@ app.factory('adsService', function($resource, $http, baseUrl, authenticationServ
 		getUserAds: getUserAds,
 		create: createNewAd,
 		deactivate: deactivateAd,
+		republish: republishAd,
 		getById: getAdById,
 		edit: editAd,
 		delete: deleteAd
