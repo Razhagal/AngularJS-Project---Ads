@@ -47,13 +47,13 @@
 				</div>
 				<ul ng-if="ad.status=='Inactive' || ad.status=='Rejected'" class="col-md-12">
 					<li>
-						<a href class="btn btn-warning">Edit</a>
+						<a href="#/user/ads/edit/{{ad.id}}" class="btn btn-warning">Edit</a>
 					</li>
 					<li>
 						<a href ng-click="republishAd(ad.id)" class="btn btn-primary">Publish Again</a>
 					</li>
 					<li>
-						<a href class="btn btn-danger">Delete</a>
+						<a href="#/user/ads/delete/{{ad.id}} class="btn btn-danger">Delete</a>
 					</li>
 				</ul>
 			</div>

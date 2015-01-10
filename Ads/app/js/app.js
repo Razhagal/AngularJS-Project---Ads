@@ -39,6 +39,14 @@ var app = angular.module('adsModule', ['ngRoute', 'ngResource', 'ui.bootstrap.pa
 			controller: 'PublishAdController',
 			resolve: routePermissions
 		})
+		.when('/user/ads/edit/:id', {
+
+			resolve: routePermissions
+		})
+		.when('/user/ads/delete/:id', {
+			
+			resolve: routePermissions
+		})
 		.otherwise({
 			redirectTo: '/home'
 		})
