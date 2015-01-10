@@ -51,12 +51,17 @@ aside ul li {
 	display: inline-block;
 }
 
-.advContent span:last-child, .advItem p {
+.advContentBox, .advItem p {
 	padding: 5px;
 	background: #464545;
 	border: 1px dotted black;
+	margin-bottom: 10px;
 }
 
 .advContent span:last-child {
 	margin-left: 14px;
+}
+
+.adButtons {
+	border-right: 2px solid black;
 }

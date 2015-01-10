@@ -1,4 +1,4 @@
-<div ng-if="adsData.ads.length==2" class="panel panel-info">
+<div ng-if="userAdsData.ads.length==2" class="panel panel-info">
 	<div class="panel-heading">
 		<h3 class="panel-title">Sorry!</h3>
 	</div>
@@ -7,38 +7,58 @@
 	</div>
 </div>
 <ul>
-	<li ng-repeat="ad in adsData.ads" class="advItem">
-		<article>
-			<header class="row">
-				<h3 class="col-md-7">
-					{{ad.title}}
-				</h3>
-				<span class="col-md-3 col-md-offset-2">
-					{{ad.date | date: 'd-MMM-yyyy'}}
-				</span>
-			</header>
-			<div class="row">
-				<img src="" ng-src="{{ad.imageDataUrl || 'images/no-img.jpg'}}" class="col-md-4">
-				<div class="col-md-8">
-					<p class="advContent">
-						{{ad.text}}
-					</p>
-					<div class="row advContent">
-						<span class="col-md-2">Name:</span>
-						<span class="col-md-9">{{ad.ownerName}}</span>
-					</div>
-					<div class="row advContent">
-						<span class="col-md-2">Email:</span>
-						<span class="col-md-9">{{ad.ownerEmail}}</span>
-					</div>
-					<div class="row advContent">
-						<span class="col-md-2">Tel.</span>
-						<span class="col-md-9">{{ad.ownerPhone}}</span>
+	<li ng-repeat="ad in userAdsData.ads" class="advItem">
+		<article class="row">
+			<div class="col-md-9 adButtons">
+				<header class="row">
+					<h3 class="col-md-7">
+						{{ad.title}}
+					</h3>
+					<span class="col-md-3 col-md-offset-2">
+						{{ad.date | date: 'd-MMM-yyyy'}}
+					</span>
+				</header>
+				<div class="row">
+					<img src="" ng-src="{{ad.imageDataUrl || 'images/no-img.jpg'}}" class="col-md-4">
+					<div class="col-md-8">
+						<p class="advContent advContentBox">
+							{{ad.text}}
+						</p>
+						<div class="row advContent">
+							<span class="col-md-3">Category: {{ad.id}}</span>
+							<span class="col-md-8 advContentBox">{{ad.categoryName || 'Not specified'}}</span>
+						</div>
+						<div class="row advContent">
+							<span class="col-md-3">Town:</span>
+							<span class="col-md-8 advContentBox">{{ad.townName || 'Not specified'}}</span>
+						</div>
 					</div>
 				</div>
+			</div>
+			<div class="col-md-3">
+				<span class="col-md-12 col-md-offset-3">
+					Status
+				</span>
+				<span class="col-md-9 col-md-offset-1 advContentBox">
+					{{ad.status}}
+				</span>
+				<div ng-if="ad.status=='WaitingApproval' || ad.status=='Published'" class="col-md-12">
+					<a href class="btn btn-danger">Deactivate</a>
+				</div>
+				<ul ng-if="ad.status=='Inactive' || ad.status=='Rejected'" class="col-md-12">
+					<li>
+						<a href class="btn btn-warning">Edit</a>
+					</li>
+					<li>
+						<a href class="btn btn-primary">Publish Again</a>
+					</li>
+					<li>
+						<a href class="btn btn-danger">Delete</a>
+					</li>
+				</ul>
 			</div>
 		</article>
 	</li>
 </ul>
-<div pagination total-items="adsData.numItems" ng-model="adsRequestParams.startPage" max-size="5" boundary-links="true" ng-change="showPage()" num-pages="numPages" items-per-page="adsRequestParams.pageSize" rotate="false">
+<div pagination total-items="userAdsData.numItems" ng-model="adsRequestParams.startPage" max-size="3" boundary-links="true" ng-change="showPage()" num-pages="numPages" items-per-page="adsRequestParams.pageSize" rotate="false">
 </div>

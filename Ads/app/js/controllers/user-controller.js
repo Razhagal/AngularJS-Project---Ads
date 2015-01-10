@@ -6,13 +6,17 @@ app.controller('UserController', function($scope, $location, pageSize, pageServi
 		startPage: 1,
 		pageSize: pageSize
 	}
-
+	
 	$scope.getAds = function(requestParams) {
 		adsService.getUserAds(requestParams)
 			.then(function(data) {
-				$scope.adsData = data;
+				$scope.userAdsData = data;
 			});
 	}
+	
+	$scope.showPage = function() {
+		$scope.getAds($scope.adsRequestParams);
+	}
 
-	$scope.getAds($scope.adsRequestParams);
+	$scope.getAds($scope.adsRequestParams);	
 });
