@@ -4,16 +4,26 @@ app.factory('userService', function($resource, $http, baseUrl, authenticationSer
 		userResource = $resource(
 			userUrl, null, {
 			update: { method: 'PUT' },
-			getProfile: { url: userAdsUrl + '/profile', method: 'GET' },
-			edit: { url: userAdsUrl + '/profile', method: 'PUT' },
-			changePassword: { url: userAdsUrl + '/changepassword', method: 'PUT' }
+			getProfile: { url: userUrl + '/profile', method: 'GET' },
+			edit: { url: userUrl + '/profile', method: 'PUT' },
+			changePassword: { url: userUrl + '/changepassword', method: 'PUT' }
 		});
 
 	function getUserData() {
-		return userResource.getProfile();
+		return userResource.getProfile().$promise;
+	}
+
+	function editUserData(userData) {
+		return userResource.edit(userData).$promise;
+	}
+
+	function changePassword(passData) {
+		return userResource.changePassword(passData).$promise;
 	}
 
 	return {
-		getUser: getUserData
+		getUser: getUserData,
+		editUser: editUserData,
+		changePassword: changePassword
 	}
 });
