@@ -54,7 +54,7 @@
 				<label for="inputOldPass" class="control-label">Old Password:</label>
 			</div>
 			<div class="col-md-12">
-				<input type="password" class="form-control" id="inputOldPass" placeholder="Old Password">
+				<input type="password" ng-model="userPassData.oldPassword" class="form-control" id="inputOldPass" placeholder="Old Password">
 			</div>
 		</div>
 		<div class="form-group">
@@ -62,7 +62,7 @@
 				<label for="inputNewPass" class="control-label">New Password:</label>
 			</div>
 			<div class="col-md-12">
-				<input type="password" class="form-control" id="inputNewPass" placeholder="New Password">
+				<input type="password" ng-model="userPassData.newPassword" class="form-control" id="inputNewPass" placeholder="New Password">
 			</div>
 		</div>
 		<div class="form-group">
@@ -70,11 +70,11 @@
 				<label for="inputConfirmPass" class="control-label">Confirm New Password:</label>
 			</div>
 			<div class="col-md-12">
-				<input type="password" class="form-control" id="inputConfirmPass" placeholder="Repeat Password">
+				<input type="password" ng-model="userPassData.confirmPassword" class="form-control" id="inputConfirmPass" placeholder="Repeat Password">
 			</div>
 		</div>
 		<div class="form-group">
-			<a href class="btn btn-primary col-md-offset-1">Change Password</a>
+			<a href ng-click="changePassword(userPassData)" class="btn btn-primary col-md-offset-1">Change Password</a>
 			<a href="#/user/home" class="btn btn-danger col-md-offset-1">Cancel</a>
 		</div>
 	</fieldset>

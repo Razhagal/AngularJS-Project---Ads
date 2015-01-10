@@ -19,6 +19,15 @@ app.controller('UserProfileController', function($scope, pageService, userServic
 			});
 	}
 
+	$scope.changePassword = function(userPassData) {
+		userService.changePassword(userPassData)
+			.then(function(successData) {
+				notificationService.showSuccess('Password changed successfully.')
+			}, function(error) {
+				notificationService.showError(error.data);
+			})
+	}
+
 	$scope.getProfileData();
 	$scope.towns = townsService.getTowns();
 });
