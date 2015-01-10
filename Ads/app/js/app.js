@@ -32,7 +32,6 @@ var app = angular.module('adsModule', ['ngRoute', 'ngResource', 'ui.bootstrap.pa
 			templateUrl: 'templates/userAds.html',
 			controller: 'UserController',
 			resolve: routePermissions
-
 		})
 		.when('/user/ads/publish', {
 			templateUrl: 'templates/publishAd.html',
@@ -47,6 +46,11 @@ var app = angular.module('adsModule', ['ngRoute', 'ngResource', 'ui.bootstrap.pa
 		.when('/user/ads/delete/:id', {
 			templateUrl: 'templates/deleteAd.html',
 			controller: 'DeleteAdController',
+			resolve: routePermissions
+		})
+		.when('/user/profile', {
+			templateUrl: '/templates/userProfile.html',
+			controller: 'UserProfileController',
 			resolve: routePermissions
 		})
 		.otherwise({

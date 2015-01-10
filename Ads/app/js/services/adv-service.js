@@ -1,7 +1,6 @@
 app.factory('adsService', function($resource, $http, baseUrl, authenticationService) {
 	$http.defaults.headers.common['Authorization'] = authenticationService.getHeaders().Authorization;
 	var userAdsUrl = baseUrl + '/user/ads',
-		headers = authenticationService.getHeaders(),
 		 publicAdsResource = $resource(
 			baseUrl + '/ads',
 			null,
