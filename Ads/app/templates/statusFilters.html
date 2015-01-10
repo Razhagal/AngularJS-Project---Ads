@@ -5,19 +5,19 @@
 	<div class="panel-body">
 		<ul>
 			<li>
-				<a href="#">All</a>
+				<a href ng-click="filterByStatus(null)">All</a>
 			</li>
 			<li>
-				<a href="#">Published</a>
+				<a href ng-click="filterByStatus(2)">Published</a>
 			</li>
 			<li>
-				<a href="#">Waiting Approval</a>
+				<a href ng-click="filterByStatus(1)">Waiting Approval</a>
 			</li>
 			<li>
-				<a href="#">Inactive</a>
+				<a href ng-click="filterByStatus(3)">Inactive</a>
 			</li>
 			<li>
-				<a href="#">Rejected</a>
+				<a href ng-click="filterByStatus(4)">Rejected</a>
 			</li>
 		</ul>
 	</div>

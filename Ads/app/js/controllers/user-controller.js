@@ -6,7 +6,7 @@ app.controller('UserController', function($scope, $location, pageSize, pageServi
 		startPage: 1,
 		pageSize: pageSize
 	}
-	
+
 	$scope.getAds = function(requestParams) {
 		adsService.getUserAds(requestParams)
 			.then(function(data) {
@@ -15,6 +15,11 @@ app.controller('UserController', function($scope, $location, pageSize, pageServi
 	}
 	
 	$scope.showPage = function() {
+		$scope.getAds($scope.adsRequestParams);
+	}
+
+	$scope.filterByStatus = function(status) {
+		$scope.adsRequestParams.status = status;
 		$scope.getAds($scope.adsRequestParams);
 	}
 
