@@ -1,6 +1,6 @@
 app.factory('adsService', function($resource, $http, baseUrl, authenticationService) {
 	$http.defaults.headers.common['Authorization'] = authenticationService.getHeaders().Authorization;
-	var userAdsUrl = baseUrl + '/user/ads/:id',
+	var userAdsUrl = baseUrl + '/user/ads',
 		headers = authenticationService.getHeaders(),
 		 publicAdsResource = $resource(
 			baseUrl + '/ads',
@@ -10,13 +10,10 @@ app.factory('adsService', function($resource, $http, baseUrl, authenticationServ
 			}
 		}),
 		userAdsResource = $resource(
-			userAdsUrl,
-			{
-				id:'@id'
-			},
-			{update: {
-				method: 'PUT'
-			}
+			userAdsUrl, {id: '@id'}, {
+			update: { method: 'PUT' },
+			republish: { url: userAdsUrl + '/publishagain/:id', method: 'PUT', params: { id: '@id' } },
+			deactivate: { url: userAdsUrl + '/deactivate/:id', method: 'PUT', params: { id: '@id' } },
 		});
 
 	function getAllAds(adsRequestParams) {
@@ -29,6 +26,10 @@ app.factory('adsService', function($resource, $http, baseUrl, authenticationServ
 
 	function createNewAd(ad) {
 		return userAdsResource.save(ad).$promise;
+	}
+
+	function deactivateAd(id) {
+		return userAdsResource.deactivate({id: id}).$promise;
 	}
 
 	function getAdById(id) {
@@ -47,6 +48,7 @@ app.factory('adsService', function($resource, $http, baseUrl, authenticationServ
 		getAll: getAllAds,
 		getUserAds: getUserAds,
 		create: createNewAd,
+		deactivate: deactivateAd,
 		getById: getAdById,
 		edit: editAd,
 		delete: deleteAd

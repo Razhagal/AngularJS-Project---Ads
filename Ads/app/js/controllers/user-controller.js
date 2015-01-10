@@ -23,5 +23,14 @@ app.controller('UserController', function($scope, $location, pageSize, pageServi
 		$scope.getAds($scope.adsRequestParams);
 	}
 
+	$scope.deactivateAd = function(adId) {
+		adsService.deactivate(adId)
+			.then(function(successData) {
+				notificationService.showError(successData);
+			}, function(error) {
+				notificationService.showError(error.data);
+			})
+	}
+
 	$scope.getAds($scope.adsRequestParams);	
 });

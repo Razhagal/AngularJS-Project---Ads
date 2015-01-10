@@ -1,4 +1,4 @@
-<div ng-if="userAdsData.ads.length==0 && adsRequestParams.status != '4'" class="panel panel-info">
+<div ng-if="userAdsData.ads.length==0" class="panel panel-info">
 	<div class="panel-heading">
 		<h3 class="panel-title">Sorry!</h3>
 	</div>
@@ -43,7 +43,7 @@
 					{{ad.status}}
 				</span>
 				<div ng-if="ad.status=='WaitingApproval' || ad.status=='Published'" class="col-md-12">
-					<a href class="btn btn-danger">Deactivate</a>
+					<a href ng-click="deactivateAd(ad.id)" class="btn btn-danger">Deactivate</a>
 				</div>
 				<ul ng-if="ad.status=='Inactive' || ad.status=='Rejected'" class="col-md-12">
 					<li>
