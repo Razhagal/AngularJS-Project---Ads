@@ -1,0 +1,44 @@
+<div ng-if="adsData.ads.length==2" class="panel panel-info">
+	<div class="panel-heading">
+		<h3 class="panel-title">Sorry!</h3>
+	</div>
+	<div class="panel-body">
+		You dont have any advertisements published yet. Click <a href="#/user/ads/publish">Here</a> to publish your first ad!
+	</div>
+</div>
+<ul>
+	<li ng-repeat="ad in adsData.ads" class="advItem">
+		<article>
+			<header class="row">
+				<h3 class="col-md-7">
+					{{ad.title}}
+				</h3>
+				<span class="col-md-3 col-md-offset-2">
+					{{ad.date | date: 'd-MMM-yyyy'}}
+				</span>
+			</header>
+			<div class="row">
+				<img src="" ng-src="{{ad.imageDataUrl || 'images/no-img.jpg'}}" class="col-md-4">
+				<div class="col-md-8">
+					<p class="advContent">
+						{{ad.text}}
+					</p>
+					<div class="row advContent">
+						<span class="col-md-2">Name:</span>
+						<span class="col-md-9">{{ad.ownerName}}</span>
+					</div>
+					<div class="row advContent">
+						<span class="col-md-2">Email:</span>
+						<span class="col-md-9">{{ad.ownerEmail}}</span>
+					</div>
+					<div class="row advContent">
+						<span class="col-md-2">Tel.</span>
+						<span class="col-md-9">{{ad.ownerPhone}}</span>
+					</div>
+				</div>
+			</div>
+		</article>
+	</li>
+</ul>
+<div pagination total-items="adsData.numItems" ng-model="adsRequestParams.startPage" max-size="5" boundary-links="true" ng-change="showPage()" num-pages="numPages" items-per-page="adsRequestParams.pageSize" rotate="false">
+</div>
