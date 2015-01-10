@@ -20,12 +20,21 @@ app.controller('UserProfileController', function($scope, pageService, userServic
 	}
 
 	$scope.changePassword = function(userPassData) {
-		userService.changePassword(userPassData)
-			.then(function(successData) {
-				notificationService.showSuccess('Password changed successfully.')
-			}, function(error) {
-				notificationService.showError(error.data);
-			})
+		if (userPassData) {
+			if (userPassData.newPassword == userPassData.confirmPassword) {
+				userService.changePassword(userPassData)
+					.then(function(successData) {
+						notificationService.showSuccess('Password changed successfully.')
+					}, function(error) {
+						notificationService.showError(error.data);
+					});
+			} else {
+				notificationService.showError('New password doesn\' match confirmed password.');
+			}
+		} else {
+			notificationService.showError('Invalid password.');
+		}
+		
 	}
 
 	$scope.getProfileData();
