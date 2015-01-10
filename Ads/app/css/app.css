@@ -38,7 +38,7 @@ aside ul li {
 	margin-bottom: 20px;
 }
 
-.advItem img {
+.advItem img, .ad-image {
 	max-width: 150px;
 	max-height: 150px;
 }

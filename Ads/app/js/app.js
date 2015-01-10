@@ -40,7 +40,8 @@ var app = angular.module('adsModule', ['ngRoute', 'ngResource', 'ui.bootstrap.pa
 			resolve: routePermissions
 		})
 		.when('/user/ads/edit/:id', {
-
+			templateUrl: 'templates/editAd.html',
+			controller: 'EditAdController',
 			resolve: routePermissions
 		})
 		.when('/user/ads/delete/:id', {

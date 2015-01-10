@@ -1,5 +1,5 @@
 app.controller('UserController', function($scope, $location, pageSize, pageService,
-	adsService, authenticationService, notificationService) {
+	adsService, notificationService) {
 	pageService.setPageName('My Ads');
 
 	$scope.adsRequestParams = {
@@ -26,7 +26,7 @@ app.controller('UserController', function($scope, $location, pageSize, pageServi
 	$scope.deactivateAd = function(adId) {
 		adsService.deactivate(adId)
 			.then(function(successData) {
-				notificationService.showError('Ad deactivated successfully.');
+				notificationService.showSuccess('Ad deactivated successfully.');
 			}, function(error) {
 				notificationService.showError(error.data);
 			})

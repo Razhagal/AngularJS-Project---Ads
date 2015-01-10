@@ -10,10 +10,13 @@ app.factory('adsService', function($resource, $http, baseUrl, authenticationServ
 			}
 		}),
 		userAdsResource = $resource(
-			userAdsUrl, {id: '@id'}, {
+			userAdsUrl, null, {
 			update: { method: 'PUT' },
 			republish: { url: userAdsUrl + '/publishagain/:id', method: 'PUT', params: { id: '@id' } },
 			deactivate: { url: userAdsUrl + '/deactivate/:id', method: 'PUT', params: { id: '@id' } },
+			getById: { url: userAdsUrl + '/:id', method: 'GET', params: { id: '@id' } },
+			edit: { url: userAdsUrl + '/:id', method: 'PUT', params: { id: '@id' } },
+			delete: { url: userAdsUrl + '/:id', method: 'DELETE', params: { id: '@id' } },
 		});
 
 	function getAllAds(adsRequestParams) {
@@ -37,11 +40,11 @@ app.factory('adsService', function($resource, $http, baseUrl, authenticationServ
 	}
 
 	function getAdById(id) {
-		return userAdsResource.get({id:id}).$promise;
+		return userAdsResource.getById({id:id}).$promise;
 	}
 
 	function editAd(id, ad) {
-		return userAdsResource.update({id:id}, ad).$promise;
+		return userAdsResource.edit({id:id}, ad).$promise;
 	}
 
 	function deleteAd(id) {
